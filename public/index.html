@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai or Cohort — Chat with your favourite tech mentor</title>
+    <meta
+      name="description"
+      content="AI personas of Hitesh Choudhary and Piyush Garg, built with prompt engineering over an OpenAI-compatible API. Pick a mentor, ask anything."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="brand" href="./index.html">
+        <span class="brand-cup" aria-hidden="true">☕<i class="steam s1"></i><i class="steam s2"></i></span>
+        <span class="brand-name">Chai <em>or</em> Cohort</span>
+      </a>
+      <button class="btn btn-ghost" data-open-picker>Start chatting</button>
+    </nav>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">persona ai · 2 mentors · unlimited chai</p>
+          <h1>
+            <span class="haanji">“Haan&nbsp;ji!”</span><br />
+            Poochhiye jo<br />poochhna hai.
+          </h1>
+          <p class="lede">
+            Chat with AI personas of <strong>Hitesh Choudhary</strong> and
+            <strong>Piyush Garg</strong> — their tone, their Hinglish, their
+            chai-fuelled advice — recreated purely through prompt engineering
+            over an OpenAI-compatible API.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-open-picker>Get started</button>
+            <a class="btn btn-ghost" href="#how-it-works">How it works</a>
+          </div>
+        </div>
+
+        <!-- Signature: the product demos itself -->
+        <div class="hero-demo" aria-hidden="true">
+          <div class="demo-window">
+            <div class="demo-titlebar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="demo-title">hitesh-sir — live</span>
+            </div>
+            <div class="demo-body" id="demo-body">
+              <div class="demo-msg user">sir, DSA pehle ya development?</div>
+              <div class="demo-msg bot"><span id="demo-typed"></span><span class="caret"></span></div>
+            </div>
+            <div class="demo-inputbar">
+              <span class="demo-prompt">›</span> ask anything…
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MENTORS: the duel ============ -->
+      <section class="mentors" id="mentors">
+        <p class="eyebrow">choose your mentor</p>
+        <h2>Do mentor. Do andaaz.</h2>
+
+        <div class="duel">
+          <article class="duel-side hitesh" tabindex="0" role="button" data-tutor="Hitesh Sir" aria-label="Chat with Hitesh Sir">
+            <img class="duel-photo" src="./images/hitesh-sir.jfif" alt="" />
+            <div class="duel-scrim"></div>
+            <div class="duel-copy">
+              <span class="duel-quote">“Haan ji, chai le aaiye…”</span>
+              <h3 class="duel-name">Hitesh<br />Sir</h3>
+              <div class="duel-tags">
+                <span>☕ chai aur code</span><span>calm · patient</span>
+                <span>1M + 800k yt</span><span>45 desh</span>
+              </div>
+              <p class="duel-bio">
+                Retired from corporate. Ex-founder LCO (acquired), ex-CTO,
+                Sr. Director at PW. Samjhaate hai aaram se — psychology
+                pehle, code baad mein.
+              </p>
+              <span class="duel-cta">Chai pe baat karo →</span>
+            </div>
+          </article>
+
+          <div class="duel-ya" aria-hidden="true"><span>ya</span></div>
+
+          <article class="duel-side piyush" tabindex="0" role="button" data-tutor="Piyush Sir" aria-label="Chat with Piyush Sir">
+            <img class="duel-photo" src="./images/piyush-sir.png" alt="" />
+            <div class="duel-scrim"></div>
+            <div class="duel-copy">
+              <span class="duel-quote">“Chalo, build karte hai.”</span>
+              <h3 class="duel-name">Piyush<br />Sir</h3>
+              <div class="duel-tags">
+                <span>🚀 builder mode</span><span>direct · energetic</span>
+                <span>390k+ yt</span><span>teachyst</span>
+              </div>
+              <p class="duel-bio">
+                Software engineer aur content creator. Building Teachyst.
+                Straight practical baat — code first, theory baad mein.
+              </p>
+              <span class="duel-cta">Build pe baat karo →</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ HOW IT WORKS ============ -->
+      <section class="how" id="how-it-works">
+        <p class="eyebrow">how it works</p>
+        <h2>No fine-tuning. Sirf prompting.</h2>
+        <div class="how-grid">
+          <div class="how-step">
+            <span class="how-label">system prompt</span>
+            <h3>Persona as instruction</h3>
+            <p>
+              Each mentor is a hand-written system prompt — their catchphrases,
+              tone, cohorts, and rules — nothing more.
+            </p>
+          </div>
+          <div class="how-step">
+            <span class="how-label">openai-compatible api</span>
+            <h3>One SDK, any model</h3>
+            <p>
+              The backend speaks the OpenAI chat-completions format, pointed at
+              Gemini. Swap the base URL and it runs anywhere.
+            </p>
+          </div>
+          <div class="how-step">
+            <span class="how-label">chatroom</span>
+            <h3>You pick, they reply</h3>
+            <p>
+              Choose a mentor, ask in Hindi, English, or Hinglish — the reply
+              comes back in their voice.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built for the GenAI cohort · personas are AI recreations, not the real mentors.</p>
+    </footer>
+
+    <!-- ============ MENTOR PICKER OVERLAY ============ -->
+    <div class="picker" id="picker" hidden>
+      <div class="picker-backdrop" data-close-picker></div>
+      <div class="picker-panel" role="dialog" aria-modal="true" aria-labelledby="picker-title">
+        <button class="picker-close" data-close-picker aria-label="Close">×</button>
+        <p class="eyebrow">get started</p>
+        <h2 id="picker-title">Kis se baat karni hai?</h2>
+        <div class="picker-grid">
+          <button class="picker-card hitesh" data-tutor="Hitesh Sir">
+            <img src="./images/hitesh-sir.jfif" alt="" />
+            <span class="picker-name">Hitesh Sir</span>
+            <span class="picker-sub">chai aur code ☕</span>
+          </button>
+          <button class="picker-card piyush" data-tutor="Piyush Sir">
+            <img src="./images/piyush-sir.png" alt="" />
+            <span class="picker-name">Piyush Sir</span>
+            <span class="picker-sub">builder mode 🚀</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // --- mentor selection (cards + overlay) ---
+      function goToChat(tutor) {
+        localStorage.setItem('selectedTutor', tutor);
+        window.location.href = './chat.html';
+      }
+      document.querySelectorAll('[data-tutor]').forEach((el) => {
+        el.addEventListener('click', () => goToChat(el.dataset.tutor));
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            goToChat(el.dataset.tutor);
+          }
+        });
+      });
+
+      // --- picker overlay open/close ---
+      const picker = document.getElementById('picker');
+      document.querySelectorAll('[data-open-picker]').forEach((btn) =>
+        btn.addEventListener('click', () => {
+          picker.hidden = false;
+          document.body.style.overflow = 'hidden';
+          picker.querySelector('.picker-card').focus();
+        })
+      );
+      function closePicker() {
+        picker.hidden = true;
+        document.body.style.overflow = '';
+      }
+      document.querySelectorAll('[data-close-picker]').forEach((el) =>
+        el.addEventListener('click', closePicker)
+      );
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !picker.hidden) closePicker();
+      });
+
+      // --- hero demo: types Hitesh's voice ---
+      const line =
+        'Haan ji, dhekiye — dono zaroori hai, lekin pehle ek project banaiye. ' +
+        'Confidence project se aata hai, DSA saath-saath chalta rahega. ☕';
+      const typed = document.getElementById('demo-typed');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        typed.textContent = line;
+      } else {
+        let i = 0;
+        (function tick() {
+          if (i <= line.length) {
+            typed.textContent = line.slice(0, i++);
+            setTimeout(tick, 34);
+          }
+        })();
+      }
+    </script>
+  </body>
+</html>

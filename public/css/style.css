@@ -1,0 +1,705 @@
+/* ============================================================
+   Chai or Cohort — landing
+   Palette: kadak chai at a late-night live class
+   ============================================================ */
+:root {
+  --kadak: #1b120c;      /* deep roast brown */
+  --surface: #26190f;    /* steeped surface */
+  --surface-2: #31210f;
+  --milk: #f5eadb;       /* milky text */
+  --faded: #a58d77;      /* muted */
+  --masala: #e89b3c;     /* Hitesh amber */
+  --masala-deep: #b96f1e;
+  --teal: #4ec9b0;       /* Piyush editor-teal */
+  --line: rgba(245, 234, 219, 0.12);
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1100px 600px at 85% -10%, rgba(232, 155, 60, 0.09), transparent 60%),
+    var(--kadak);
+  color: var(--milk);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--masala);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- shared bits ---------- */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--masala);
+  margin-bottom: 0.9rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 1.7rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--masala);
+  color: #221302;
+}
+
+.btn-primary:hover {
+  background: #f3ad55;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--milk);
+  border-color: var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--masala);
+  color: var(--masala);
+}
+
+/* ---------- nav ---------- */
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--milk);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.brand-name em {
+  font-style: italic;
+  color: var(--masala);
+}
+
+/* steam over the cup */
+.brand-cup {
+  position: relative;
+  font-size: 1.25rem;
+}
+
+.steam {
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  width: 3px;
+  height: 8px;
+  border-radius: 3px;
+  background: rgba(245, 234, 219, 0.5);
+  animation: steam 2.6s ease-in-out infinite;
+}
+
+.steam.s2 {
+  left: 30%;
+  animation-delay: 1.2s;
+}
+
+@keyframes steam {
+  0%   { transform: translateY(2px) scaleY(0.6); opacity: 0; }
+  40%  { opacity: 0.8; }
+  100% { transform: translateY(-9px) scaleY(1.2); opacity: 0; }
+}
+
+/* ---------- hero ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 4.5rem 0 5.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+}
+
+.haanji {
+  color: var(--masala);
+  font-style: italic;
+}
+
+.lede {
+  color: var(--faded);
+  max-width: 44ch;
+  margin-bottom: 2.2rem;
+}
+
+.lede strong {
+  color: var(--milk);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+/* ---------- hero demo window (signature) ---------- */
+.demo-window {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transform: rotate(1.2deg);
+}
+
+.demo-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.demo-titlebar .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(245, 234, 219, 0.18);
+}
+
+.demo-title {
+  margin-left: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--faded);
+}
+
+.demo-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 190px;
+}
+
+.demo-msg {
+  max-width: 85%;
+  padding: 0.7rem 0.95rem;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.demo-msg.user {
+  align-self: flex-end;
+  background: var(--surface-2);
+  border: 1px solid rgba(232, 155, 60, 0.35);
+  border-bottom-right-radius: 3px;
+}
+
+.demo-msg.bot {
+  align-self: flex-start;
+  background: rgba(232, 155, 60, 0.1);
+  border: 1px solid var(--line);
+  border-bottom-left-radius: 3px;
+}
+
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--masala);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.demo-inputbar {
+  border-top: 1px solid var(--line);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--faded);
+}
+
+.demo-prompt {
+  color: var(--masala);
+  margin-right: 0.4rem;
+}
+
+/* ---------- mentors ---------- */
+.mentors {
+  padding: 4rem 0;
+  border-top: 1px solid var(--line);
+}
+
+/* the duel: two worlds face to face; the hovered side wins space & color */
+.duel {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.duel-side {
+  position: relative;
+  flex: 1;
+  min-height: 460px;
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--surface);
+  transition: flex 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.duel:hover .duel-side:not(:hover) {
+  flex: 0.75;
+}
+
+.duel-side:hover,
+.duel-side:focus-visible {
+  flex: 1.5;
+}
+
+.duel-side.hitesh { --side: var(--masala); }
+.duel-side.piyush { --side: var(--teal); }
+
+.duel-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(1) contrast(1.05);
+  opacity: 0.55;
+  transform: scale(1.03);
+  transition: filter 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+
+.duel-side:hover .duel-photo,
+.duel-side:focus-visible .duel-photo {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* duotone wash + readable bottom */
+.duel-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(20, 11, 5, 0.95) 8%, rgba(20, 11, 5, 0.45) 45%, transparent 75%),
+    linear-gradient(160deg, color-mix(in srgb, var(--side) 32%, transparent), transparent 55%);
+  transition: opacity 0.5s ease;
+}
+
+.duel-copy {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.6rem 1.7rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.duel-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--side);
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+.duel-side:hover .duel-quote,
+.duel-side:focus-visible .duel-quote {
+  opacity: 1;
+  transform: none;
+}
+
+.duel-name {
+  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 0.95;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+}
+
+.duel-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.duel-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--milk);
+  border: 1px solid color-mix(in srgb, var(--side) 55%, transparent);
+  background: rgba(20, 11, 5, 0.55);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+}
+
+/* bio reveals only on the chosen side */
+.duel-bio {
+  color: var(--faded);
+  font-size: 0.9rem;
+  max-width: 42ch;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease 0.15s;
+}
+
+.duel-side:hover .duel-bio,
+.duel-side:focus-visible .duel-bio {
+  max-height: 8em;
+  opacity: 1;
+}
+
+.duel-cta {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--side);
+}
+
+/* the "ya" badge between the two worlds */
+.duel-ya {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--kadak);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 800;
+  color: var(--milk);
+  pointer-events: none;
+}
+
+/* ---------- how it works ---------- */
+.how {
+  padding: 4rem 0 5rem;
+  border-top: 1px solid var(--line);
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.how-step {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.how-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--masala);
+  border: 1px solid rgba(232, 155, 60, 0.35);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.how-step h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.how-step p {
+  color: var(--faded);
+  font-size: 0.93rem;
+}
+
+/* ---------- footer ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--faded);
+  font-size: 0.85rem;
+}
+
+/* ---------- picker overlay ---------- */
+.picker[hidden] {
+  display: none;
+}
+
+.picker {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.picker-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 9, 5, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.picker-panel {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 2.2rem;
+  width: min(640px, 100%);
+  text-align: center;
+  animation: rise 0.25s ease both;
+}
+
+@keyframes rise {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+.picker-panel h2 {
+  margin-bottom: 1.8rem;
+}
+
+.picker-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  color: var(--faded);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.picker-close:hover {
+  color: var(--milk);
+}
+
+.picker-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.picker-card {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.5rem 1rem 1.3rem;
+  cursor: pointer;
+  color: var(--milk);
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.picker-card:hover,
+.picker-card:focus-visible {
+  transform: translateY(-3px);
+}
+
+.picker-card.hitesh:hover,
+.picker-card.hitesh:focus-visible { border-color: var(--masala); }
+.picker-card.piyush:hover,
+.picker-card.piyush:focus-visible { border-color: var(--teal); }
+
+.picker-card img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 0.5rem;
+  border: 2px solid var(--line);
+}
+
+.picker-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.picker-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--faded);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 0 3.5rem;
+  }
+
+  .demo-window {
+    transform: none;
+  }
+
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* touch has no hover: stack the duel, show everything, keep color */
+  .duel {
+    flex-direction: column;
+  }
+
+  .duel-side {
+    min-height: 380px;
+    flex: none;
+  }
+
+  .duel-photo {
+    filter: grayscale(0);
+    opacity: 0.85;
+    transform: none;
+  }
+
+  .duel-quote,
+  .duel-bio {
+    opacity: 1;
+    transform: none;
+    max-height: none;
+  }
+
+  .duel-ya {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    padding: 1rem;
+  }
+
+  .nav .btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .picker-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .picker-panel {
+    padding: 1.6rem 1.2rem;
+  }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .steam,
+  .caret {
+    animation: none;
+  }
+
+  .picker-panel {
+    animation: none;
+  }
+
+  .btn,
+  .picker-card,
+  .duel-side,
+  .duel-photo,
+  .duel-quote,
+  .duel-bio,
+  .duel-scrim {
+    transition: none;
+  }
+}

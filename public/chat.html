@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatroom — Chai or Cohort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/atom-one-dark.min.css"
+    />
+    <link rel="stylesheet" href="./css/chat.css" />
+  </head>
+  <body>
+    <div class="chat-shell">
+      <!-- window titlebar, same language as the hero demo window -->
+      <div class="titlebar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="session" id="session-label">hitesh-sir — live session</span>
+        <span class="cup" aria-hidden="true">☕<i class="steam s1"></i><i class="steam s2"></i></span>
+      </div>
+
+      <header class="chat-header">
+        <a class="back" href="./index.html" aria-label="Back to home">←</a>
+        <img id="tutor-avatar" class="avatar" src="./images/hitesh-sir.jfif" alt="" />
+        <div class="who">
+          <span id="chat-title" class="name">Hitesh Sir</span>
+          <span class="status"><i class="pulse"></i><span id="status-text">persona online</span></span>
+        </div>
+        <button type="button" class="switch" id="switch-btn">Switch mentor</button>
+      </header>
+
+      <div id="chat-box" class="chat-box" aria-live="polite">
+        <!-- welcome block injected by script.js -->
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <span class="prompt-mark" aria-hidden="true">›</span>
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Ask in Hindi, English, or Hinglish…"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" aria-label="Send message">Send&nbsp;↑</button>
+      </form>
+    </div>
+
+    <!-- mentor switcher overlay -->
+    <div class="picker" id="picker" hidden>
+      <div class="picker-backdrop" data-close-picker></div>
+      <div class="picker-panel" role="dialog" aria-modal="true" aria-labelledby="picker-title">
+        <button class="picker-close" data-close-picker aria-label="Close">×</button>
+        <h2 id="picker-title">Kis se baat karni hai?</h2>
+        <div class="picker-grid">
+          <button class="picker-card hitesh" data-tutor="Hitesh Sir">
+            <img src="./images/hitesh-sir.jfif" alt="" />
+            <span class="picker-name">Hitesh Sir</span>
+            <span class="picker-sub">chai aur code ☕</span>
+          </button>
+          <button class="picker-card piyush" data-tutor="Piyush Sir">
+            <img src="./images/piyush-sir.png" alt="" />
+            <span class="picker-name">Piyush Sir</span>
+            <span class="picker-sub">builder mode 🚀</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
