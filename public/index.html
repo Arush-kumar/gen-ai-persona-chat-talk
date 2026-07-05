@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chai or Cohort — Chat with your favourite tech mentor</title>
+    <title>Chai aur Cohort — Chat with your favourite tech mentor</title>
     <meta
       name="description"
       content="AI personas of Hitesh Choudhary and Piyush Garg, built with prompt engineering over an OpenAI-compatible API. Pick a mentor, ask anything."
@@ -19,8 +19,10 @@
   <body>
     <nav class="nav">
       <a class="brand" href="./index.html">
-        <span class="brand-cup" aria-hidden="true">☕<i class="steam s1"></i><i class="steam s2"></i></span>
-        <span class="brand-name">Chai <em>or</em> Cohort</span>
+        <span class="brand-cup" aria-hidden="true"
+          >☕<i class="steam s1"></i><i class="steam s2"></i
+        ></span>
+        <span class="brand-name">Chai <em>aur</em> Cohort</span>
       </a>
       <button class="btn btn-ghost" data-open-picker>Start chatting</button>
     </nav>
@@ -41,7 +43,9 @@
             over an OpenAI-compatible API.
           </p>
           <div class="hero-actions">
-            <button class="btn btn-primary" data-open-picker>Get started</button>
+            <button class="btn btn-primary" data-open-picker>
+              Get started
+            </button>
             <a class="btn btn-ghost" href="#how-it-works">How it works</a>
           </div>
         </div>
@@ -50,12 +54,15 @@
         <div class="hero-demo" aria-hidden="true">
           <div class="demo-window">
             <div class="demo-titlebar">
-              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="dot"></span><span class="dot"></span
+              ><span class="dot"></span>
               <span class="demo-title">hitesh-sir — live</span>
             </div>
             <div class="demo-body" id="demo-body">
               <div class="demo-msg user">sir, DSA pehle ya development?</div>
-              <div class="demo-msg bot"><span id="demo-typed"></span><span class="caret"></span></div>
+              <div class="demo-msg bot">
+                <span id="demo-typed"></span><span class="caret"></span>
+              </div>
             </div>
             <div class="demo-inputbar">
               <span class="demo-prompt">›</span> ask anything…
@@ -70,7 +77,13 @@
         <h2>Do mentor. Do andaaz.</h2>
 
         <div class="duel">
-          <article class="duel-side hitesh" tabindex="0" role="button" data-tutor="Hitesh Sir" aria-label="Chat with Hitesh Sir">
+          <article
+            class="duel-side hitesh"
+            tabindex="0"
+            role="button"
+            data-tutor="Hitesh Sir"
+            aria-label="Chat with Hitesh Sir"
+          >
             <img class="duel-photo" src="./images/hitesh-sir.jfif" alt="" />
             <div class="duel-scrim"></div>
             <div class="duel-copy">
@@ -81,9 +94,9 @@
                 <span>1M + 800k yt</span><span>45 desh</span>
               </div>
               <p class="duel-bio">
-                Retired from corporate. Ex-founder LCO (acquired), ex-CTO,
-                Sr. Director at PW. Samjhaate hai aaram se — psychology
-                pehle, code baad mein.
+                Retired from corporate. Ex-founder LCO (acquired), ex-CTO, Sr.
+                Director at PW. Samjhaate hai aaram se — psychology pehle, code
+                baad mein.
               </p>
               <span class="duel-cta">Chai pe baat karo →</span>
             </div>
@@ -91,7 +104,13 @@
 
           <div class="duel-ya" aria-hidden="true"><span>ya</span></div>
 
-          <article class="duel-side piyush" tabindex="0" role="button" data-tutor="Piyush Sir" aria-label="Chat with Piyush Sir">
+          <article
+            class="duel-side piyush"
+            tabindex="0"
+            role="button"
+            data-tutor="Piyush Sir"
+            aria-label="Chat with Piyush Sir"
+          >
             <img class="duel-photo" src="./images/piyush-sir.png" alt="" />
             <div class="duel-scrim"></div>
             <div class="duel-copy">
@@ -145,14 +164,24 @@
     </main>
 
     <footer class="footer">
-      <p>Built for the GenAI cohort · personas are AI recreations, not the real mentors.</p>
+      <p>
+        Built for the GenAI cohort · personas are AI recreations, not the real
+        mentors.
+      </p>
     </footer>
 
     <!-- ============ MENTOR PICKER OVERLAY ============ -->
     <div class="picker" id="picker" hidden>
       <div class="picker-backdrop" data-close-picker></div>
-      <div class="picker-panel" role="dialog" aria-modal="true" aria-labelledby="picker-title">
-        <button class="picker-close" data-close-picker aria-label="Close">×</button>
+      <div
+        class="picker-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="picker-title"
+      >
+        <button class="picker-close" data-close-picker aria-label="Close">
+          ×
+        </button>
         <p class="eyebrow">get started</p>
         <h2 id="picker-title">Kis se baat karni hai?</h2>
         <div class="picker-grid">
@@ -199,9 +228,9 @@
         picker.hidden = true;
         document.body.style.overflow = '';
       }
-      document.querySelectorAll('[data-close-picker]').forEach((el) =>
-        el.addEventListener('click', closePicker)
-      );
+      document
+        .querySelectorAll('[data-close-picker]')
+        .forEach((el) => el.addEventListener('click', closePicker));
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !picker.hidden) closePicker();
       });
@@ -211,7 +240,9 @@
         'Haan ji, dhekiye — dono zaroori hai, lekin pehle ek project banaiye. ' +
         'Confidence project se aata hai, DSA saath-saath chalta rahega. ☕';
       const typed = document.getElementById('demo-typed');
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const reduceMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
       if (reduceMotion) {
         typed.textContent = line;
       } else {
