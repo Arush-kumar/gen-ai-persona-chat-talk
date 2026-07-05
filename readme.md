@@ -12,11 +12,13 @@ The goal of this project is to make the responses feel natural by recreating eac
 
 🚀 **Live Website**
 
-https://YOUR_LIVE_LINK_HERE
+https://gen-ai-persona-chat-talk.vercel.app/
 
 🎥 **Demo Video (Twitter/X)**
 
-https://x.com/YOUR_POST_LINK
+## 🎥 Demo
+
+[![Watch Demo on X](https://img.shields.io/badge/Watch-Demo_on_X-000000?style=for-the-badge&logo=x)](https://x.com/arush_v26/status/2073688908173545499?s=20)
 
 ---
 
